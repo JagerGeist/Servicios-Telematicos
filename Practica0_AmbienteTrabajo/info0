@@ -1,0 +1,24 @@
+Carpetas sincronizadas
+Estas permiten a vagrant sincronizar una carpeta en la maquina host con la
+maquina invitada, esto permite que se continue trabajando en los archivos de su
+proyecto en su maquina host, pero usar los recursos en la maquina invitada para
+compilar o ejecutar su proyecto
+
+Predeterminadamente vagrant comparte el directorio de su proyecto(El dir con vagrantfile)
+en /vagrant
+
+Las carpeta sincronizadas se configuran dentro de su vagrantfile usando config.vm.synced_folder
+
+EJ
+Vagrant.configure("2") do |config|
+  # other config here
+
+  config.vm.synced_folder "src/", "/srv/website"
+end
+
+
+El primer parámetro es una ruta a un directorio en la máquina host. Si la ruta es relativa, es relativa a la raíz del proyecto. 
+El segundo parámetro debe ser una ruta absoluta de dónde compartir la carpeta dentro de la máquina invitada. 
+Esta carpeta se creará (recursivamente, si es necesario) si no existe. De forma predeterminada, 
+Vagrant monta las carpetas sincronizadas con el propietario/grupo configurado para el usuario de SSH y cualquier carpeta principal configurada como raíz.
+
