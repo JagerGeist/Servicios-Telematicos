@@ -1,0 +1,13 @@
+Los usuarios reales e invitados inician sesión usando cuentas 
+individuales con contraseñas que sólo una persona conoce. 
+Los usuarios anónimos inician sesión en una cuenta conocida que 
+puede estar disponible para cualquiera. La mayor parte de la 
+distribución de archivos a gran escala se crea usando la cuenta anónima.
+
+Usuario real: Aquel usuario con el cual la entidad de información ya ha logrado establecer la comunicación. El 
+Usuario potencial que aún no es real (al cual algunos autores llaman No Usuario), es aquel con el cual la 
+entidad de información aún no ha logrado establecer la comunicación.
+
+Usuario anónimo: El usuario anonymous es un usuario que se suele instalar por 
+defecto en los servidores en los que queremos tener un acceso público para una descarga. 
+Este usuario únicamente suele tener permiso de lectura y su password suele ser anonymous.
