@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+config.vm.define :servidorS do |servidorS|
+servidorS.vm.box = "bento/centos-7.9"
+servidorS.vm.network :private_network, ip: "192.168.70.2"
+servidorS.vm.hostname = "servidorS"
+servidorS.vm.provision "shell", path: "./Streama.sh"
+end
+
+config.vm.define :servidorF do |servidorF|
+servidorF.vm.box = "bento/centos-7.9"
+servidorF.vm.network "public_network", use_dhcp_assigned_default_route: true
+servidorF.vm.network :private_network, ip: "192.168.70.3"
+servidorF.vm.network :forwarded_port, guest: 80, host: 5000
+servidorF.vm.hostname = "servidorF"
+servidorF.vm.provision "shell", path: "./Firewall.sh"
+end
+
+end
